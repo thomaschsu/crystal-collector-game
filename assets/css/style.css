@@ -22,3 +22,20 @@ body {
 .footer {
     min-height: calc(65vh - 70px);
 }
+
+img {
+    width: 25%;
+}
+
+.char-container {
+    position: relative;
+}
+
+.char-title {
+    position: absolute;
+    left: auto;
+    color: #FFF;
+    webkit-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.15);
+    text-shadow: 1px 1px #000;
+}
