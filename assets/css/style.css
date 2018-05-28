@@ -20,7 +20,7 @@ body {
     background-color: #FAFAFA;
 }
 .footer {
-    min-height: calc(65vh - 70px);
+    min-height: calc(85vh - 70px);
 }
 
 img {
