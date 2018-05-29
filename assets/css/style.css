@@ -21,11 +21,11 @@ body {
     background-color: #FAFAFA;
 }
 .footer {
-    min-height: calc(85vh - 70px);
+    min-height: calc(45vh - 70px);
 }
 .crystal-image {
     width: 20%;
-    border: 1px solid;
+    border: 3px solid;
     border-color: #000;
     margin: 0px 20px;
 }
