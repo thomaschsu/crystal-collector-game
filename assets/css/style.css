@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #2196F3;
+    background-color: #00BFA5;
     webkit-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.15);
     box-shadow: 0 5px 5px 0 rgba(0,0,0,0.15);
     text-shadow: 1px 1px #000;
@@ -25,9 +25,8 @@ body {
 }
 .crystal-image {
     width: 20%;
-    border: 3px solid;
-    border-color: #000;
-    margin: 0px 20px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.15);
+    margin: 20px;
 }
 .random-number {
     margin: 20px auto;
@@ -36,4 +35,10 @@ body {
     text-align: center;
     width: 50%;
     color: #fff;
+    webkit-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.15);
+    text-shadow: 1px 1px #000;
+}
+.instructions {
+    text-align: center;
 }
