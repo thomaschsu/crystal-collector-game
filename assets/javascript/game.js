@@ -1,22 +1,21 @@
 // Current Bugs:
-// 1. Your number does not go to 0 as soon as win or loss/
-// 2. Crystalvalue does not change on game restart
-
-// Variables
-var crystals = $("#crystals");
-var total = $("#total");
-var random = $("#random-number");
-var wins = $("#win");
-var losses = $("#losses");
-var msg = $("#msg");
-var crystalNumberArray = [];
-var score = 0;
-var win = 0;
-var loss = 0;
+// 1. Crystalvalue does not change on game restart
 
 $(document).ready(function() {
     // Main Random number is a number 19 - 120
     var randomNumber = Math.floor(Math.random() * (120 - 19)) + 19;
+    
+    // Variables
+    var crystals = $("#crystals");
+    var total = $("#total");
+    var random = $("#random-number");
+    var wins = $("#win");
+    var losses = $("#losses");
+    var msg = $("#msg");
+    var score = 0;
+    var win = 0;
+    var loss = 0;
+    var crystalNumberArray = [];
 
     function createNumbers() {
         for (var i = 0; i < 4; i++) {
@@ -27,15 +26,17 @@ $(document).ready(function() {
 
     // Function that resets game
     function resetGame() {
-        randomNumber = Math.floor(Math.random() * (120 - 19)) + 19;
-        random.html("<h3>" + randomNumber + "</h3>");
         score = 0;
+        randomNumber = Math.floor(Math.random() * (120 - 19)) + 19;
+        total.html("<h3> Your Number: " + score + "</h3>");
+        random.html("<h3>" + randomNumber + "</h3>");
         crystalNumberArray = [];
         createNumbers();
     }
 
     // Initializer
     createNumbers();
+    resetGame();
 
     // Add text to page
     total.html("<h3> Your Number: " + score + "</h3>");
@@ -76,7 +77,7 @@ $(document).ready(function() {
             resetGame();
             createNumbers();
 
-            // If score goes over the randomNumber, you get a loss
+        // If score goes over the randomNumber, you get a loss
         } else if (score >= randomNumber) {
             loss++;
             losses.text('Losses: ' + loss);
