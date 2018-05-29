@@ -1,3 +1,7 @@
+// Current Bugs:
+// 1. Your number does not go to 0 as soon as win or loss/
+// 2. Crystalvalue does not change on game restart
+
 // Variables
 var crystals = $("#crystals");
 var total = $("#total");
@@ -70,6 +74,7 @@ $(document).ready(function() {
             wins.text('Wins: ' + win);
             msg.text('You win! (:');
             resetGame();
+            createNumbers();
 
             // If score goes over the randomNumber, you get a loss
         } else if (score >= randomNumber) {
@@ -77,6 +82,7 @@ $(document).ready(function() {
             losses.text('Losses: ' + loss);
             msg.text('You lose... D:');
             resetGame();
+            createNumbers();
         }
     });
 });
