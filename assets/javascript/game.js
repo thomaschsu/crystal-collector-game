@@ -20,7 +20,6 @@ $(document).ready(function() {
         for (var i = 0; i < 4; i++) {
             var crystalNumber = Math.floor(Math.random() * (12 - 1)) + 1;
             crystalNumberArray.push(crystalNumber);
-            console.log(crystalNumberArray);
         }
     }
 
