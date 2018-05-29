@@ -75,7 +75,6 @@ $(document).ready(function() {
             wins.text('Wins: ' + win);
             msg.text('You win! (:');
             resetGame();
-            createNumbers();
 
         // If score goes over the randomNumber, you get a loss
         } else if (score >= randomNumber) {
@@ -83,7 +82,6 @@ $(document).ready(function() {
             losses.text('Losses: ' + loss);
             msg.text('You lose... D:');
             resetGame();
-            createNumbers();
         }
     });
 });
