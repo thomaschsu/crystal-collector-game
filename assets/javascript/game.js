@@ -1,11 +1,10 @@
-// Game resets with new numbers after win or loss
-
 // Variables
 var crystals = $("#crystals");
 var total = $("#total");
 var random = $("#random-number");
 var wins = $("#win");
 var losses = $("#losses");
+var msg = $("#msg");
 var crystalNumberArray = [];
 var score = 0;
 var win = 0;
@@ -25,7 +24,8 @@ var crystalNumber4 = Math.floor(Math.random() * (12 - 1)) + 1;
 // jQuery
 $(document).ready(function() {
     // Add text to page
-    total.text('Your total score: ' + score);
+    total.html("<h3> Your total score: " + score + "</h3>");
+    total.addClass("your-number");
 
     // Add randomNumber to page
     random.html("<h3>" + randomNumber + "</h3>");
@@ -35,7 +35,7 @@ $(document).ready(function() {
     for (var i = 1; i < 5; i++) {
         var imageCrystal = $("<img>");
         imageCrystal.addClass("crystal-image");
-        imageCrystal.attr("src", "assets/images/crystal-"+ [i] +".jpg");
+        imageCrystal.attr("src", "assets/images/crystal-" + [i] + ".jpg");
         crystalNumberArray.push(crystalNumber1, crystalNumber2, crystalNumber3, crystalNumber4);
         imageCrystal.attr("data-crystalvalue", crystalNumberArray[i]);
         crystals.append(imageCrystal);
@@ -52,17 +52,19 @@ $(document).ready(function() {
 
         // Update score with crystalValue
         score += crystalValue;
-        total.text('Your total score: ' + score);
+        total.html("<h3> Your total score: " + score + "</h3>");
 
         // If score matches the randomNumber, you get a win
         if (score === randomNumber) {
             win++;
             wins.text('Wins: ' + win);
-        
-        // If score goes over the randomNumber, you get a loss
+            msg.text('You win!');
+
+            // If score goes over the randomNumber, you get a loss
         } else if (score >= randomNumber) {
             loss++;
             losses.text('Losses: ' + loss);
+            msg.text('You lose...');
         }
     })
 });

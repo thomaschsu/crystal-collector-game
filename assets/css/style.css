@@ -42,3 +42,29 @@ body {
 .instructions {
     text-align: center;
 }
+.your-number {
+    margin: 20px auto;
+    background-color: #0091EA;
+    padding: 10px 0;
+    text-align: center;
+    width: 50%;
+    color: #fff;
+    webkit-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.15);
+    text-shadow: 1px 1px #000;
+}
+#win {
+    background-color: rgba(0,0,0,.05);
+    padding: 5px 15px;
+    font-size: 20px;
+}
+#losses {
+    padding: 5px 15px;
+    font-size: 20px;
+}
+
+#msg {
+    padding: 15px;
+    font-size: 25px;
+    text-align: center;
+}
