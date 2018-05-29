@@ -19,9 +19,6 @@ var crystalNumber2 = Math.floor(Math.random() * (12 - 1)) + 1;
 var crystalNumber3 = Math.floor(Math.random() * (12 - 1)) + 1;
 var crystalNumber4 = Math.floor(Math.random() * (12 - 1)) + 1;
 
-// ----------------------------------------------------------------------------------------
-
-// jQuery
 $(document).ready(function() {
     // Add text to page
     total.html("<h3> Your total score: " + score + "</h3>");
