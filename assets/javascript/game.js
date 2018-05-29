@@ -24,10 +24,12 @@ var crystalNumber4 = Math.floor(Math.random() * (12 - 1)) + 1;
 
 // jQuery
 $(document).ready(function() {
+    // Add text to page
     total.text('Your total score: ' + score);
 
     // Add randomNumber to page
-    random.text(randomNumber);
+    random.html("<h3>" + randomNumber + "</h3>");
+    random.addClass("random-number");
 
     // 4 crystals, each one has a random number but number is hidden
     for (var i = 1; i < 5; i++) {

@@ -29,3 +29,11 @@ body {
     border-color: #000;
     margin: 0px 20px;
 }
+.random-number {
+    margin: 20px auto;
+    background-color: #EF5350;
+    padding: 10px 0;
+    text-align: center;
+    width: 50%;
+    color: #fff;
+}
