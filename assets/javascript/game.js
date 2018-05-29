@@ -21,7 +21,7 @@ var crystalNumber4 = Math.floor(Math.random() * (12 - 1)) + 1;
 
 $(document).ready(function() {
     // Add text to page
-    total.html("<h3> Your total score: " + score + "</h3>");
+    total.html("<h3> Your Number: " + score + "</h3>");
     total.addClass("your-number");
 
     // Add randomNumber to page
@@ -49,7 +49,7 @@ $(document).ready(function() {
 
         // Update score with crystalValue
         score += crystalValue;
-        total.html("<h3> Your total score: " + score + "</h3>");
+        total.html("<h3> Your Number: " + score + "</h3>");
 
         // If score matches the randomNumber, you get a win
         if (score === randomNumber) {
