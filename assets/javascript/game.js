@@ -1,10 +1,9 @@
 // Current Bugs:
 // 1. Crystalvalue does not change on game restart
-
 $(document).ready(function() {
     // Main Random number is a number 19 - 120
     var randomNumber = Math.floor(Math.random() * (120 - 19)) + 19;
-    
+
     // Variables
     var crystals = $("#crystals");
     var total = $("#total");
@@ -31,8 +30,10 @@ $(document).ready(function() {
         randomNumber = Math.floor(Math.random() * (120 - 19)) + 19;
         total.html("<h3> Your Number: " + score + "</h3>");
         random.html("<h3>" + randomNumber + "</h3>");
-        crystalNumberArray = [];
+        crystalNumberArray.splice(0, 4);
         createNumbers();
+        crystals.find("img").slice(0 , 4).remove();
+        createCrystals();
     }
 
     // Initializer
@@ -48,14 +49,15 @@ $(document).ready(function() {
     random.addClass("random-number");
 
     // 4 crystals, each one has a random number but number is hidden
-    for (var i = 0; i < 4; i++) {
-        var imageCrystal = $("<img>");
-        imageCrystal.addClass("crystal-image");
-        imageCrystal.attr("src", "assets/images/crystal-" + [i] + ".jpg");
-        imageCrystal.attr("data-crystalvalue", crystalNumberArray[i]);
-        crystals.append(imageCrystal);
+    function createCrystals() {
+        for (var i = 0; i < 4; i++) {
+            var imageCrystal = $("<img>");
+            imageCrystal.addClass("crystal-image");
+            imageCrystal.attr("src", "assets/images/crystal-" + [i] + ".jpg");
+            imageCrystal.attr("data-crystalvalue", crystalNumberArray[i]);
+            crystals.append(imageCrystal);
+        }
     }
-
     // Win & loss text
     wins.text('Wins: ' + win);
     losses.text('Losses: ' + loss);
@@ -76,7 +78,7 @@ $(document).ready(function() {
             msg.text('You win! (:');
             resetGame();
 
-        // If score goes over the randomNumber, you get a loss
+            // If score goes over the randomNumber, you get a loss
         } else if (score >= randomNumber) {
             loss++;
             losses.text('Losses: ' + loss);
