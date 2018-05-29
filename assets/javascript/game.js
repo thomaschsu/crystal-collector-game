@@ -21,6 +21,7 @@ $(document).ready(function() {
         for (var i = 0; i < 4; i++) {
             var crystalNumber = Math.floor(Math.random() * (12 - 1)) + 1;
             crystalNumberArray.push(crystalNumber);
+            console.log(crystalNumberArray);
         }
     }
 
@@ -47,11 +48,10 @@ $(document).ready(function() {
     random.addClass("random-number");
 
     // 4 crystals, each one has a random number but number is hidden
-    for (var i = 1; i < 5; i++) {
+    for (var i = 0; i < 4; i++) {
         var imageCrystal = $("<img>");
         imageCrystal.addClass("crystal-image");
         imageCrystal.attr("src", "assets/images/crystal-" + [i] + ".jpg");
-        createNumbers();
         imageCrystal.attr("data-crystalvalue", crystalNumberArray[i]);
         crystals.append(imageCrystal);
     }
