@@ -1,4 +1,5 @@
-// Game resets with new numbers afterwards
+// Game resets with new numbers after win or loss
+
 // Variables
 var crystals = $("#crystals");
 var total = $("#total");
@@ -24,19 +25,21 @@ var crystalNumber4 = Math.floor(Math.random() * (12 - 1)) + 1;
 // jQuery
 $(document).ready(function() {
     total.text('Your total score: ' + score);
+
     // Add randomNumber to page
     random.text(randomNumber);
 
     // 4 crystals, each one has a random number but number is hidden
-    for (var i = 0; i < 4; i++) {
+    for (var i = 1; i < 5; i++) {
         var imageCrystal = $("<img>");
         imageCrystal.addClass("crystal-image");
-        imageCrystal.attr("src", "assets/images/crystal-1.jpg");
+        imageCrystal.attr("src", "assets/images/crystal-"+ [i] +".jpg");
         crystalNumberArray.push(crystalNumber1, crystalNumber2, crystalNumber3, crystalNumber4);
         imageCrystal.attr("data-crystalvalue", crystalNumberArray[i]);
         crystals.append(imageCrystal);
     }
 
+    // Win & loss text
     wins.text('Wins: ' + win);
     losses.text('Losses: ' + loss);
 

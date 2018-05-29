@@ -24,7 +24,8 @@ body {
     min-height: calc(85vh - 70px);
 }
 .crystal-image {
-    width: 25%;
+    width: 20%;
     border: 1px solid;
-    border-color: black;
+    border-color: #000;
+    margin: 0px 20px;
 }
